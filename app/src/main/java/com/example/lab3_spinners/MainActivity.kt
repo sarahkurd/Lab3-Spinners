@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         setContentView(R.layout.activity_main)
 
         // spinner 1
-        val spinner1: Spinner = findViewById(R.id.spinner1)
+        //val spinner1: Spinner = findViewById(R.id.spinner1)
         spinner1.onItemSelectedListener = this
 
         // Spinner 2
-        val spinner2: Spinner = findViewById(R.id.spinner2)
+        //val spinner2: Spinner = findViewById(R.id.spinner2)
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
                 this,
@@ -54,12 +54,12 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         Log.d("ItemSelected", parent.getItemAtPosition(pos) as? String)
 
         // get spinner id
-         when(parent.id) {
-                R.id.spinner3 ->
+         when(parent) {
+                spinner3 ->
                         textView3.text = "Welcome, " + parent.getItemAtPosition(pos) as? String
-                R.id.spinner2 ->
+                spinner2 ->
                         Toast.makeText(this, selection, Toast.LENGTH_SHORT).show()
-                R.id.spinner1 ->
+                spinner1 ->
                         Toast.makeText(this, selection, Toast.LENGTH_SHORT).show()
          }
 
